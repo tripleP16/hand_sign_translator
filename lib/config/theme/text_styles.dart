@@ -1,28 +1,27 @@
-import 'dart:ui';
+import 'package:flutter/material.dart';
 
 class AppTextStyles {
-  static final heading = TextStyle(
-    fontSize: 24,
+  static const TextStyle heading = TextStyle(
+    fontSize: 25,
     fontWeight: FontWeight.bold,
     letterSpacing: -0.5,
   );
 
-  static final subtitle = TextStyle(
+  static const subtitle = TextStyle(
     fontSize: 18,
     fontWeight: FontWeight.w500,
     letterSpacing: 0.15,
   );
 
-  static final body = TextStyle(
+  static const body = TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.normal,
     letterSpacing: 0.5,
   );
 
-  static final button = TextStyle(
+  static const button = TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.w600,
     letterSpacing: 1.25,
   );
-
 }
