@@ -1,30 +1,38 @@
 import 'package:flutter/material.dart';
+import 'package:hand_sign_translator/presentation/widgets/common/background_gradient.dart';
+import 'package:hand_sign_translator/presentation/widgets/common/text/main_title.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    // Get the screen size
+    final screenHeight = MediaQuery.of(context).size.height;
+    final screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Home Screen'),
-      ),
-      body: const Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
+      body: SingleChildScrollView(
+        child: Stack(
+          children: [
+            // Background with specific height
+            Center(
+              child: SizedBox(
+                height: screenHeight, // Full screen height
+                child: const BackgroundGradient(),
+              ),
+            ),
+
+            // Column for content
+            Positioned(
+              top: screenHeight * 0.15,
+              left: screenWidth * 0.1,
+              child: const MainTitle(
+                title: "Hola Pablo!",
+              ),
             ),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          // Respond to button press
-        },
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
       ),
     );
   }
