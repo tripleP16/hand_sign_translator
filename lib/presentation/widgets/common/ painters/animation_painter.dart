@@ -1,14 +1,14 @@
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
-import 'package:hand_sign_translator/config/theme/app_colors.dart';
 
-class DarkGradientPainter extends CustomPainter {
+class AnimationPainter extends CustomPainter {
   final double factorArcLength;
   static const double _baseRadius = 3;
   static const double _strokeWidth = 2.0;
+  final Color color;
 
-  const DarkGradientPainter(this.factorArcLength);
+  const AnimationPainter(this.factorArcLength, this.color);
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -25,37 +25,37 @@ class DarkGradientPainter extends CustomPainter {
         center: baseCenter,
         radius: radius,
         sweepAngle: math.pi / 2,
-        color: AppColors.gradientStart,
+        color: color,
       ),
       ArcConfig(
         center: Offset(baseCenter.dx, baseCenter.dy + 15),
         radius: radius,
         sweepAngle: math.pi / 2 + 0.025,
-        color: AppColors.gradientStart.withOpacity(0.8),
+        color: color.withOpacity(0.8),
       ),
       ArcConfig(
         center: Offset(baseCenter.dx, baseCenter.dy + 25),
         radius: radius,
         sweepAngle: math.pi / 2 + 0.05,
-        color: AppColors.gradientStart.withOpacity(0.6),
+        color: color.withOpacity(0.6),
       ),
       ArcConfig(
         center: Offset(baseCenter.dx, baseCenter.dy + 35),
         radius: radius,
         sweepAngle: math.pi / 2 + 0.10,
-        color: AppColors.gradientStart.withOpacity(0.4),
+        color: color.withOpacity(0.4),
       ),
       ArcConfig(
         center: Offset(baseCenter.dx, baseCenter.dy + 45),
         radius: radius,
         sweepAngle: math.pi / 2 + 0.15,
-        color: AppColors.gradientStart.withOpacity(0.2),
+        color: color.withOpacity(0.2),
       ),
       ArcConfig(
         center: Offset(baseCenter.dx, baseCenter.dy + 55),
         radius: radius,
         sweepAngle: math.pi / 2 + 0.25,
-        color: AppColors.gradientStart.withOpacity(0.1),
+        color: color.withOpacity(0.1),
       ),
     ];
   }

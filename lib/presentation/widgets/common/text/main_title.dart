@@ -3,7 +3,12 @@ import 'package:hand_sign_translator/config/theme/text_styles.dart';
 
 class MainTitle extends StatelessWidget {
   final String title;
-  const MainTitle({super.key, required this.title});
+  final TextAlign alignment;
+  const MainTitle({
+    super.key,
+    required this.title,
+    this.alignment = TextAlign.center,
+  });
 
   @override
   Widget build(BuildContext context) {
