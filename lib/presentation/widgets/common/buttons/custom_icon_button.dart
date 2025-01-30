@@ -6,7 +6,7 @@ class CustomIconButton extends StatefulWidget {
   const CustomIconButton({super.key});
 
   @override
-  _CustomIconButtonState createState() => _CustomIconButtonState();
+  State<CustomIconButton> createState() => _CustomIconButtonState();
 }
 
 class _CustomIconButtonState extends State<CustomIconButton>
@@ -47,6 +47,8 @@ class _CustomIconButtonState extends State<CustomIconButton>
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return GestureDetector(
       onTapDown: _onTapDown,
       onTapUp: _onTapUp,
@@ -64,13 +66,16 @@ class _CustomIconButtonState extends State<CustomIconButton>
             Container(
               width: 150,
               height: 50,
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  colors: [Colors.blue, Colors.purple],
+                  colors: [
+                    theme.colorScheme.primary,
+                    theme.colorScheme.secondary,
+                  ],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                 ),
-                borderRadius: BorderRadius.only(
+                borderRadius: const BorderRadius.only(
                   topRight: Radius.circular(20),
                   bottomLeft: Radius.circular(20),
                 ), // Apply same borderRadius for border

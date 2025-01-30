@@ -32,15 +32,21 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(height: 16), // Spacing
 
               const Spacer(
-                flex: 1,
+                flex: 2,
               ), // Push buttons to the bottom
 
               // Buttons
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16.0),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [CustomIconButton()],
+                child: Wrap(
+                  spacing: 16,
+                  runSpacing: 32,
+                  alignment: WrapAlignment.center,
+                  children: [
+                    CustomIconButton(),
+                    CustomIconButton(),
+                    CustomIconButton(),
+                  ],
                 ),
               ),
 
